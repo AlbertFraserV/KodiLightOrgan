@@ -19,7 +19,7 @@ class Visuals:
         pygame.mixer.music.load("Alone.mp3")
         pygame.mixer.music.play(0)
         screen = pygame.display.set_mode((self.screen_width, self.screen_height))
-        freq_ranges = np.arange(100, int(self.audio.frequencies.max())*10, 100)
+        freq_ranges = np.arange(100, int(self.audio.frequencies.max()))
         while running:
             screen.fill((0,0,0))
             pygame.display.flip()
