@@ -31,7 +31,7 @@ class Visuals:
             for f in range(len(freq_ranges)):
                 db = self.audio.get_dbs(pygame.mixer.music.get_pos()/1000.0, self.audio.frequencies[freq_ranges[f]])
                 self.draw_rect(screen, (random.randint(0,254),random.randint(0,254),random.randint(0,254)), (50,50), (x,y), self.calc_alpha(self.max_db, db))
-                x += 100; y += 100
+                x += 100; y += 0
                 rects.append(db)
 
             for event in pygame.event.get():
