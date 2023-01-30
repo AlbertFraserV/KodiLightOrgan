@@ -29,12 +29,8 @@ class Visuals:
             rects = []
             x = 0; y = 0
             for f in range(len(freq_ranges)):
-                try:
-                    temp = self.audio.frequencies[freq_ranges[f]]
-                except IndexError:
-                    breakpoint()
-                db = self.audio.get_dbs(pygame.mixer.music.get_pos()/1000.0, temp)
-                self.draw_rect(screen, (random.randint(0,254),random.randint(0,254),random.randint(0,254)), (10,10), (x,y), self.calc_alpha(self.max_db, db))
+                db = self.audio.get_dbs(pygame.mixer.music.get_pos()/1000.0, self.audio.frequencies[freq_ranges[f]])
+                self.draw_rect(screen, (random.randint(0,254),random.randint(0,254),random.randint(0,254)), (50,50), (x,y), self.calc_alpha(self.max_db, db))
                 x += 10; y += 10
                 rects.append(db)
 
