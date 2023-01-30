@@ -13,6 +13,10 @@ class Audio:
         self.min = self.spectrogram.min()
 
     def get_dbs(self, target_time, freq):
-        return self.spectrogram[int(freq*self.frequencies_index_ratio)][int(target_time*self.time_index_ratio)]
+        # try:
+        return self.spectrogram[int(freq*self.frequencies_index_ratio)-1][int(target_time*self.time_index_ratio)]
+        # except IndexError:
+        #     print("Caught!")
+        #     return self.spectrogram[int(freq*self.frequencies_index_ratio)-1][int(target_time*self.time_index_ratio)]
 
 audio = Audio("Alone.mp3")
